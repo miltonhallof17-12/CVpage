@@ -1,5 +1,28 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# Frontend Agent Rules – Next.js (Production Ready)
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+## 🎯 Objective
+Build highly optimized, mobile-first, accessible interfaces in Next.js with strong technical SEO.
+
+---
+
+## 📱 Responsive Design (Mobile First)
+
+- ALWAYS design for mobile first (min-width: 320px).
+- Use progressive breakpoints:
+  - sm: 640px
+  - md: 768px
+  - lg: 1024px
+  - xl: 1280px
+
+- Avoid:
+  - Fixed units (px) in main layout
+  - Horizontal overflow (NEVER allowed)
+
+- Use:
+  - Flexbox or Grid (NO floats)
+  - `max-width` + `margin: auto` for layout containment
+  - `clamp()` for fluid typography
+
+Example:
+```css
+font-size: clamp(1rem, 2vw, 1.5rem);
