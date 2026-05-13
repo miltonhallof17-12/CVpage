@@ -15,7 +15,11 @@ interface Particle {
   floatSpeed: number;
 }
 
-export function InteractiveParticles() {
+interface Props {
+  color?: string;
+}
+
+export function InteractiveParticles({ color = "bg-white" }: Props) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [particles, setParticles] = useState<Particle[]>([]);
 
@@ -75,7 +79,7 @@ export function InteractiveParticles() {
         return (
           <motion.div
             key={particle.id}
-            className="absolute bg-white rounded-full"
+            className={`absolute ${color} rounded-full`}
             style={{
               width: particle.size,
               height: particle.size,

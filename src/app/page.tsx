@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Hero from "@/components/Hero";
-import WetPaintButton  from "@/components/GlowingButtons";
 import CoverflowSwiper from "@/components/CoverflowSwiper";
 import { AboutSection } from "@/components/AboutSection";
 import { SearchBar } from "@/components/SearchBar";
 import { ProjectsGrid } from "@/components/ProjectsGrid";
+import AnimatedBlob from "@/components/AnimatedBlob";
+
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -67,21 +68,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Hero />
-      
-      
-      <section className="w-full overflow-hidden mt-16">
+
+      <section className="w-full overflow-hidden">
         <CoverflowSwiper />
       </section>
-
+      
       <section className="max-w-6xl mx-auto px-4">
         <AboutSection />
       </section>
-
-      <div className="flex justify-center">
-        <WetPaintButton className="px-8 py-4 text-lg mb-12">
-          Contact Me
-        </WetPaintButton>
-      </div>
 
       <section className="max-w-4xl mx-auto px-4 mb-12">
         <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />

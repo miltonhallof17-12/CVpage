@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import {cn} from "@/lib/utils"
 
 // The main component that renders the button and its drips
-const WetPaintButton = ({children, className}: {className: string; children: React.ReactNode}) => {
+const WetPaintEffect = ({children, className}: {className: string; children: React.ReactNode}) => {
   return (
     <button className={cn("group relative rounded bg-indigo-500 px-4 py-2.5 font-semibold text-white transition-colors hover:bg-indigo-600", className)}>
       {children}
@@ -123,4 +123,4 @@ const Drip: React.FC<DripProps> = ({ left, height, delay }) => {
   );
 };
 
-export default WetPaintButton;
+export default WetPaintEffect;
